@@ -1,0 +1,17 @@
+﻿@model VehiclesApp.MVC.Models.InputModels.VehicleModelInputModel
+
+<h1>Add Vehicle model</h1>
+
+<form method="post">
+    <div class="mt-3">
+        <label class="form-label">Vehicle make</label>
+        <select class="form-select" asp-for="MakeId">
+            @foreach (var item in ViewBag.data)
+            {
+                <option value="@item.Id">@item.Name</option>
+            }
+        </select>
+    </div>
+
+    @await Html.PartialAsync("ModelInputPartial")
+</form>

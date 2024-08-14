@@ -1,0 +1,12 @@
+﻿@model VehiclesApp.MVC.Models.InputModels.VehicleMakeInputModel
+
+<h1>Edit Vehicle make</h1>
+
+@if (Model is null)
+{
+    <p>No vehicle make was found with this Id.</p>
+}
+else
+{
+    @await Html.PartialAsync("MakeInputPartial")
+}

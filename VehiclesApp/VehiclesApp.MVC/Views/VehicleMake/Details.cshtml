@@ -1,0 +1,17 @@
+﻿@model VehiclesApp.MVC.Models.ViewModels.VehicleMakeViewModel
+
+<h1>Details</h1>
+
+@if (Model is null)
+{
+    <p>No vehicle make was found with this Id.</p>
+}
+else
+{
+    <h4>Vehicle make</h4>
+    @await Html.PartialAsync("MakeViewPartial")
+
+    <div class="mt-3">
+        <a class="btn btn-primary" asp-action="Index">Back to list</a>
+    </div>
+}

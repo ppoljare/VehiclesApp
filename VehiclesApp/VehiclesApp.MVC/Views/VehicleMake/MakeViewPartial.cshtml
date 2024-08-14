@@ -1,0 +1,37 @@
+﻿@model VehiclesApp.MVC.Models.ViewModels.VehicleMakeViewModel
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Name
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Name
+        </dd>
+        <dt class="col-sm-2">
+            Abrv
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Abrv
+        </dd>
+        <dt class="col-sm-2">
+            Models
+        </dt>
+        <dd class="col-sm-10">
+            <table class="table">
+                <tr>
+                    <th>Model name</th>
+                    <th>Model abrv</th>
+                </tr>
+                @foreach (var item in Model.VehicleModels)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Abrv</td>
+                    </tr>
+                }
+            </table>
+        </dd>
+    </dl>
+</div>

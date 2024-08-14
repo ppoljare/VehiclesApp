@@ -1,0 +1,31 @@
+﻿@model VehiclesApp.MVC.Models.InputModels.VehicleModelInputModel
+
+<h1>Edit Vehicle model</h1>
+
+@if (Model is null)
+{
+    <p>No vehicle model was found with this Id.</p>
+}
+else
+{
+    <form method="post">
+        <div class="mt-3">
+            <label class="form-label">Vehicle make</label>
+            <select class="form-select" asp-for="MakeId">
+                @foreach (var item in ViewBag.data)
+                {
+                    if (item.Id == Model.Id)
+                    {
+                        <option selected value="@item.Id">@item.Name</option>
+                    }
+                    else
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                }
+            </select>
+        </div>
+
+        @await Html.PartialAsync("ModelInputPartial")
+    </form>
+}
